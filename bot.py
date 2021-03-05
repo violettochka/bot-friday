@@ -63,7 +63,13 @@ def kafedra(update, context):
 def mozhlivosti(update, context):
     pass
 def umovy(update, context):
-    pass
+    kb = [[InlineKeyboardButton('Конкурсні предмети ЗНО',callback_data = '')],
+          [InlineKeyboardButton('Розрахунок конкурсного балу',callback_data = '')],
+          [InlineKeyboardButton('Етапи вступної компанії',callback_data = '')],
+          [InlineKeyboardButton('Корисні посилання',callback_data = '')],
+          [InlineKeyboardButton('Кількість бюджетних та контрактних мість для вступників',callback_data = '')],]
+    reply = InlineKeyboardMarkup(kb)
+    update.callback_query.message.reply_text('Hi! you can choose', reply_markup = reply )
 def main():
 
     updater = Updater("1600092846:AAHLA--iPlmFI8LMfp-U7PEL2NtmrGqUJJQ", use_context=True)
